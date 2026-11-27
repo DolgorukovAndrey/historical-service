@@ -16,6 +16,8 @@ public class Career {
     @Column(name = "id")
     private Long id;
 
+    @NotNull(message = "Id сотрудника не может быть пустым")
+    @Min(value = 0, message = "Id сотрудника должен быть больше 0")
     @Column(name = "employee_id", nullable = false)
     private Integer employeeId;
 

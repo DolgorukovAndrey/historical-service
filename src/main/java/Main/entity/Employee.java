@@ -1,6 +1,7 @@
 package Main.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -16,6 +17,8 @@ public class Employee {
     @Column(name = "id")
     private Long id;
 
+    @NotNull(message = "Id сотрудника не может быть пустым")
+    @Min(value = 0, message = "Id сотрудника должен быть больше 0")
     @Column(name = "employee_id", nullable = false)
     private Integer employeeId;
 
